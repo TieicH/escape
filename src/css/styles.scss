@@ -1,3 +1,5 @@
+@import "reset";
+
 $blue: blue;
 
 body {
@@ -23,20 +25,34 @@ footer {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
   flex: 2 1 90vh;
   text-align: center;
+}
+
+.centered-col {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 #artists {
   display: flex;
   flex-wrap: wrap;
-  & > div {
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    margin: 1rem;
-  }
+  justify-content: center;
+}
+
+.artist-card {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  margin: 1rem;
+  position: relative;
+}
+
+.artist-info {
+  background-color: rgba($color: #000, $alpha: 0.6);
+  text-transform: uppercase;
+  font-size: 1rem;
+  position: relative;
+  bottom: -88%;
 }

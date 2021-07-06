@@ -24,10 +24,14 @@ const getArtistsInfo = function() {
 
 const renderArtists = (artistsData) => {
   const artistsHtml = artistsData.map(artist => {
-    return ` <div class="artist-card" style="background-image: url('img/artists/${artist.name}.jpg');">
+    return `<div class="artist-card">
         <div class="artist-info">
           <h3>${artist.name}</h3>
-          ${artist.location}
+          <div>[ ${artist.location} ] </div>
+        </div>
+        <div class="artist-photos">
+          <img src="img/artists/${artist.name}_p.jpg" />
+          <img src="img/artists/${artist.name}.jpg" />
         </div>
       </div>`
   })

@@ -7,7 +7,7 @@ body {
   color: #FFF;
   display: flex;
   flex-direction: column;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Arial', 'Helvestica', sans-serif;
 }
 
 a {
@@ -15,8 +15,25 @@ a {
 }
 
 header {
-  border-bottom: 1px solid white;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  margin: 0 4rem;
+  font-size: 1.2rem;
+
+  a {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+
+    &.selected, &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 footer {
@@ -44,15 +61,52 @@ main {
 .artist-card {
   width: 200px;
   height: 200px;
-  background-size: cover;
+  
   margin: 1rem;
   position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 1s;
+  }
+}
+.artist-photos {
+  img:first-child {
+    opacity: 1;
+    image-rendering: pixelated;
+  }
+  img:last-child {
+    opacity: 0;
+  }
+}
+
+.artist-photos:hover {
+  img:first-child {
+    opacity: 0;
+  }
+
+  img:last-child {
+    opacity: 1;
+  }
 }
 
 .artist-info {
   background-color: rgba($color: #000, $alpha: 0.6);
   text-transform: uppercase;
   font-size: 1rem;
-  position: relative;
-  bottom: -88%;
+  position: absolute;
+  z-index: 2;
+  bottom: 0%;
+  width:100%;
+  padding: .5rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }

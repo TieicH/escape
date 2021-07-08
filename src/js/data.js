@@ -4,7 +4,7 @@ const rowStart = 2;
 const colStart = "A";
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${sid}/values/Sheet1!`;
 const start = `${colStart}${rowStart}`;
-const end = "F4";
+const end = "F";
 
 const columnKeys = {
   "name": 0,

@@ -92,16 +92,17 @@ main {
     position: absolute;
     top: 0px;
     left: 0px;
-    transition: 1s;
+    transition: .5s ease-out;
   }
 }
 .artist-photos {
   img:first-child {
     opacity: 1;
+    z-index: 2;
     image-rendering: pixelated;
   }
   img:last-child {
-    opacity: 0;
+    opacity: 1;
   }
 }
 

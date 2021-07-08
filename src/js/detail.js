@@ -1,4 +1,6 @@
-import { getArtistDetailInfo } from "./data.js";
+import { getArtists, getArtistDetailInfo, artistObjectFromColumns } from "./data.js";
+
+let artistsTotal;
 
 function getArtistParam() {
   const params = new URLSearchParams(window.location.search);
@@ -23,8 +25,38 @@ function renderView(data) {
   `
 }
 
-function loadArtistInfo() {
-  getArtistDetailInfo(getArtistParam()).then(renderView);
+function loadArtistInfo2 () {
+  getArtists().then((data) => {
+    const artistsArray = data.values;
+    const artistData = artistObjectFromColumns(artistsArray[getArtistParam()]);
+    artistsTotal = artistsArray.length - 1; // HEADER ROW
+    renderView(artistData);
+  })
+}
+// function loadArtistInfo() {
+//   getArtistDetailInfo(getArtistParam()).then(renderView);
+// }
+
+function pageArtist(e) {
+  e.preventDefault();
+
+  const artistId = parseInt(getArtistParam(), 10);
+  let newArtistId = (e.currentTarget.id === 'next') ? artistId + 1 : artistId - 1;
+  if (newArtistId > artistsTotal) {
+    newArtistId = 0;
+  } else if (newArtistId < 0) {
+    newArtistId = artistsTotal;
+  }
+  const url = new URL(window.location.href);
+  url.searchParams.set("artist", newArtistId);
+  window.history.pushState({ artist: newArtistId },
+    'test',
+    url
+  );
+  loadArtistInfo2();
 }
 
-window.onload = loadArtistInfo;
+document.querySelectorAll(".pager").forEach((el) => el.addEventListener('click', pageArtist));
+
+window.onpopstate = loadArtistInfo2;
+window.onload = loadArtistInfo2;

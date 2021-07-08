@@ -15,19 +15,22 @@ const columnKeys = {
   "photo": 5
 }
 
-const artistObjectFromColumns = (columns) => 
+export const artistObjectFromColumns = (columns) => 
   Object.keys(columnKeys).reduce((prevValue, key) => {
     prevValue[key] = columns[columnKeys[key]];
     return prevValue;
   }, {});
 
-export const getArtistsBasicInfo = function() {
+export const getArtists = () => {
   return fetch(`${url}${start}:${end}?key=${key}`).then((resp) => {
-      return resp.json();
-    })
-    .then(json => {
+    return resp.json();
+  })
+}
+
+export const getArtistsBasicInfo = function() {
+  return getArtists().then(json => {
       return json.values.map((artistValues, i) => (
-        { ...artistObjectFromColumns(artistValues), row: rowStart + i }
+        { ...artistObjectFromColumns(artistValues), row: i }
       ));
   })
 }

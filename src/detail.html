@@ -2,21 +2,29 @@
 <html>
   <head>
    <link rel="stylesheet" href="css/styles.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <header>
-      <img src="img/logo.png" alt="Escape 010101" width="20%" />
+      <div id="logo-container"><img src="img/logo.png" alt="Escape 010101" width="100%" /></div>
       <nav>
         <a href="collective.html" class="selected">Artists</a>
         <a href="register.html">Juntar</a>
         <a href="about.html">About</a>
       </nav>
     </header>
-    <main>
-      <section id="detail">
+    <main id="artist-main">
+      <a href="#" id="prev">&#8676;</a>
+      <section id="artist-detail" class="flex--column">
+        <div id="artist-photo">
+          <figure></figure>
+          <div id="artist-links"></div>
+        </div>
+        <div id="artist-about"></div>
       </section>
+      <a href="#" id="next">&#8677;</a>
     </main>
-    <footer>2021</footer>
+    <footer>©© 2021 ESCAPE </footer>
     <script src="js/detail.js" type="module"></script>
   </body>
 </html>

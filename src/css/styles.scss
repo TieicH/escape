@@ -7,11 +7,22 @@ body {
   color: #FFF;
   display: flex;
   flex-direction: column;
-  font-family: 'Arial', 'Helvestica', sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 a {
   color: #FFF;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.artist-url {
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 header {
@@ -19,6 +30,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+footer {
+  padding: 2rem;
 }
 
 nav {
@@ -43,15 +58,19 @@ footer {
 
 main {
   flex: 2 1 90vh;
-  text-align: center;
 }
 
-.centered-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#logo-container {
+  width: 30%;
+  max-width: 200px;
+  height: 80px;
+  img {
+    object-fit: cover;
+    width:100%;
+    height: 100%;
+  }
+  
 }
-
 #artists {
   display: flex;
   flex-wrap: wrap;
@@ -109,4 +128,85 @@ main {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+}
+
+#artist-photo {
+  max-height: 350px;
+  overflow: hidden;
+}
+
+#artist-about {
+  padding: 0 2rem;
+
+  .artist-name {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+  #artist-about .artist-name {
+    margin: 0 0 1.5rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #artist-photo {
+    width: 50%;
+    max-width: 300px;
+  }
+
+  #artist-about {
+    padding: 0 4rem;
+    flex-shrink: 2;
+  }
+}
+
+#prev, #next {
+  align-self:center;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.col--centered {
+  justify-content: center;
+}
+
+.text--centered {
+  text-align: center;
+}
+
+#artist-detail {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .flex--column {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #artist-detail {
+    max-width: 768px;
+    justify-content: space-around;
+    border-top: 1px solid silver;
+    padding-top: 3rem;
+  }
+
+  #artist-main {
+    display: flex;
+    justify-content: space-around;  
+  }
+}
+
+.artist-location {
+  font-weight: normal;
+  font-size: 1.2rem;
+  font-family: monospace;
 }

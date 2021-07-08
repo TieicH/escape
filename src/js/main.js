@@ -8,12 +8,12 @@ const renderArtists = (artistsData) => {
     return `<div class="artist-card" data-row="${artist.row}">
         <a href="detail?artist=${artist.row}">
           <div class="artist-info">
-            <h3>${artist.name}</h3>
+            <h3>${artist.artist_name}</h3>
             <div>[ ${artist.location} ] </div>
           </div>
           <div class="artist-photos">
-            <img src="img/artists/${artist.name}_p.jpg" />
-            <img src="img/artists/${artist.name}.jpg" />
+            <img src="img/artists/${artist.artist_name.toLowerCase()}_p.jpg" />
+            <img src="img/artists/${artist.artist_name.toLowerCase()}.jpg" />
           </div>
         </a>
       </div>`

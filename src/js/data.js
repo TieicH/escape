@@ -1,5 +1,3 @@
-
-
 const key = "AIzaSyAJ-S12P0yrxM_jOYAH74HIMiST5JTbsMQ"
 const sid="19ttl2WeUfe8-fp05lLgl_Mk1kpBwbkVS4nTLu-hHJQE";
 const rowStart = 2;
@@ -17,25 +15,25 @@ const columnKeys = {
   "photo": 5
 }
 
+const artistObjectFromColumns = (columns) => 
+  Object.keys(columnKeys).reduce((prevValue, key) => {
+    prevValue[key] = columns[columnKeys[key]];
+    return prevValue;
+  }, {});
+
 export const getArtistsBasicInfo = function() {
   return fetch(`${url}${start}:${end}?key=${key}`).then((resp) => {
-    return resp.json();
-  })
+      return resp.json();
+    })
     .then(json => {
-      return json.values.map((artistValues, i) => ({
-      name: artistValues[columnKeys.artist_name],
-      location: artistValues[columnKeys.location],
-      row: rowStart + i
-  }))});
+      return json.values.map((artistValues, i) => (
+        { ...artistObjectFromColumns(artistValues), row: rowStart + i }
+      ));
+  })
 }
-
 
 export const getArtistDetailInfo = function(artistRow) {
   return fetch(`${url}${colStart}${artistRow}:F${artistRow}?key=${key}`).then((resp) => resp.json())
-    .then(json => ({
-      name: json.values[0][columnKeys.artist_name],
-      location: json.values[0][columnKeys.location],
-      url: json.values[0][columnKeys.url]
-    }));
+    .then(json => artistObjectFromColumns(json.values[0]));
 }
 

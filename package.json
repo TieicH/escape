@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass src/css/styles.scss src/css/styles.css",
-    "css:watch": "npm run scss && node-sass src/css/styles.scss -wo src/css",
-    "start": "npm run css:watch & serve src/",
-    "build": "npm run scss"
+    "scss": "node-sass src/css/styles.scss dist/css/styles.css",
+    "css:watch": "npm run scss && node-sass dist/css/styles.scss -wo src/css",
+    "start": "npm run gulp & serve dist/",
+    "build": "npm run gulp"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,13 @@
     "url": "https://github.com/unjust/escape/issues"
   },
   "homepage": "https://github.com/unjust/escape#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.0.0",
+    "serve": "^12.0.0",
     "node-sass": "^6.0.1",
-    "serve": "^12.0.0"
+    "gulp-serve": "^1.4.0"
   }
 }

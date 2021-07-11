@@ -11,7 +11,7 @@ const renderArtists = (artistsData) => {
             <h3>${artist.artist_name}</h3>
             <div>[ ${artist.location} ] </div>
           </div>
-          <div class="artist-photos">
+          <div class="artist-photo">
             <img src="img/artists/${artist.artist_name.toLowerCase()}_p.jpg" />
             <img src="img/artists/${artist.artist_name.toLowerCase()}.jpg" />
           </div>

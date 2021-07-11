@@ -1,0 +1,50 @@
+
+/* --- collective page --- */
+#artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.artist-card {
+  width: 200px;
+  height: 200px;
+  
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: .5s ease-out;
+  }
+}
+
+.artist-photo {
+  img:first-child {
+    opacity: 1;
+    z-index: 2;
+    image-rendering: pixelated;
+  }
+  img:last-child {
+    opacity: 1;
+  }
+}
+
+.artist-photo:hover {
+  img:first-child {
+    opacity: 0;
+  }
+
+  img:last-child {
+    opacity: 1;
+  }
+}
+
+/* --- end collective page --- */

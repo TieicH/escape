@@ -1,13 +1,23 @@
 @import "reset";
+@import "detail";
+@import "collective";
 
 $blue: blue;
 
 body {
   background-color: #000;
+  background-image: url('../img/escape_bg2.png');
+  background-position: top right;
+  background-repeat: no-repeat;
   color: #FFF;
   display: flex;
   flex-direction: column;
-  font-family: 'Arial', 'Helvetica', sans-serif;
+  position: relative;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  &.no-bg {
+    background-image: none;
+  }
 }
 
 a {
@@ -18,20 +28,38 @@ p {
   line-height: 1.5;
 }
 
-.artist-url {
-  font-size: 1rem;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-header {
+#header-contents {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  max-height: 80px;
 }
 
+header {
+  position: relative;
+  background-color: rgba( 0, 0, 0, .5);
+}
+
+// header::before {
+//   content: "";
+//   background-image: url('../img/escape_bg2.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   opacity: .8;
+//   position: absolute;
+//   top: 0px;
+//   right: 0px;
+//   bottom: 0px;
+//   left: 0px;
+// }
+
+#logo {
+  top: 5px;
+  position: relative;
+  width: 25%;
+}
 
 footer {
   padding: 2rem;
@@ -59,7 +87,9 @@ footer {
 
 main {
   flex: 2 1 90vh;
+  margin: 2rem 0rem;
 }
+
 
 #logo-container {
   width: 30%;
@@ -72,108 +102,17 @@ main {
   }
   
 }
-#artists {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.artist-card {
-  width: 200px;
-  height: 200px;
-  
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    transition: .5s ease-out;
-  }
-}
-.artist-photos {
-  img:first-child {
-    opacity: 1;
-    z-index: 2;
-    image-rendering: pixelated;
-  }
-  img:last-child {
-    opacity: 1;
-  }
-}
-
-.artist-photos:hover {
-  img:first-child {
-    opacity: 0;
-  }
-
-  img:last-child {
-    opacity: 1;
-  }
-}
-
-.artist-info {
-  background-color: rgba($color: #000, $alpha: 0.6);
-  text-transform: uppercase;
-  font-size: 1rem;
-  position: absolute;
-  z-index: 2;
-  bottom: 0%;
-  width:100%;
-  padding: .5rem;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-#artist-photo {
-  max-height: 350px;
-  overflow: hidden;
-}
-
-#artist-about {
-  padding: 0 2rem;
-
-  .artist-name {
-    margin: 1.5rem 0;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  
-  #artist-about .artist-name {
-    margin: 0 0 1.5rem 0;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  #artist-photo {
-    width: 50%;
-    max-width: 300px;
-  }
-
-  #artist-about {
-    padding: 0 4rem;
-    flex-shrink: 2;
-  }
-}
-
-.pager {
-  align-self:center;
-  text-decoration: none;
-  font-size: 3rem;
-}
 
 .flex--column {
   display: flex;
   flex-direction: column;
+}
+
+
+@media screen and (min-width: 768px) {
+  .flex--row--at-md {
+    flex-direction: row !important;
+  }
 }
 
 .col--centered {
@@ -184,37 +123,9 @@ main {
   text-align: center;
 }
 
-#artist-detail {
-  font-size: 1.5rem;
-}
 
 #enter {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-  .flex--column {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  #artist-detail {
-    max-width: 768px;
-    justify-content: space-around;
-    border-top: 1px solid silver;
-    padding-top: 3rem;
-  }
-
-  #artist-main {
-    display: flex;
-    justify-content: space-around;  
-  }
-}
-
-.artist-location {
-  font-weight: normal;
-  font-size: 1.2rem;
-  font-family: monospace;
 }

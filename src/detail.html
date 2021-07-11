@@ -2,22 +2,15 @@
 <html>
   @@include('./includes/head.html')
   <body>
-    <header>
-      <div id="logo-container"><img src="img/logo.png" alt="Escape 010101" width="100%" /></div>
-      <nav>
-        <a href="collective.html" class="selected">Artists</a>
-        <a href="register.html">Juntar</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
-    <main id="artist-main">
+    @@include('includes/header.html')
+    <main id="artist">
       <a href="#" id="prev" class="pager">&#8676;</a>
-      <section id="artist-detail" class="flex--column">
-        <div id="artist-photo">
+      <section id="artist--detail" class="flex--column flex--row--at-md ">
+        <div id="artist--photo">
           <figure></figure>
-          <div id="artist-links"></div>
+          <div id="artist--links"></div>
         </div>
-        <div id="artist-about"></div>
+        <div id="artist--about"></div>
       </section>
       <a href="#" id="next" class="pager">&#8677;</a>
     </main>

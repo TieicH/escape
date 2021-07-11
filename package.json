@@ -22,11 +22,12 @@
   "homepage": "https://github.com/unjust/escape#readme",
   "dependencies": {},
   "devDependencies": {
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
     "gulp-sass": "^5.0.0",
-    "serve": "^12.0.0",
+    "gulp-serve": "^1.4.0",
     "node-sass": "^6.0.1",
-    "gulp-serve": "^1.4.0"
+    "serve": "^12.0.0"
   }
 }

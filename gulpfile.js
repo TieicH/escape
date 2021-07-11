@@ -1,4 +1,5 @@
 const { pipe, task, src, dest, watch } = require('gulp');
+const del = require('del');
 const fileinclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('node-sass'));
 const serve = require('gulp-serve');
@@ -6,7 +7,8 @@ const serve = require('gulp-serve');
 const DIST_DIR = './dist';
 
 task('fileinclude', function() {
-  src(['src/*.html'])
+  console.log('processing html files');
+  return src(['src/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -18,7 +20,7 @@ const processHtmlFiles = task('fileinclude');
 
 task('copyJs', function() {
   console.log("moving javascript");
-  return src('src/js/**/*.js')
+  return src('src/**/js/*.js')
     .pipe(dest(`${DIST_DIR}`));
 });
 
@@ -41,8 +43,18 @@ task('buildStyles', function() {
 
 const buildStyles = task('buildStyles');
 
+
+task('clean', function(cb) {
+  // You can use multiple globbing patterns as you would with `gulp.src`
+  console.log('cleaning');
+  del(DIST_DIR, cb);
+});
+
+const clean = task("clean");
+
 function defaultTask(cb) {
   // place code for your default task here
+  clean();
   processHtmlFiles();
   buildStyles();
   copyJs();
@@ -55,7 +67,7 @@ task('serve', serve(DIST_DIR));
 exports.watch = function () {
   watch('./src/css/*.scss', buildStyles);
   watch('./src/js/*.js', copyJs);
-  watch('./src/**/*.html', processHtmlFiles);
+  watch(['./src/**/*.html', './src/includes/*.html'], processHtmlFiles);
   watch('./src/img/*', copyAssets);
 };
 

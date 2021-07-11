@@ -19,7 +19,9 @@ function renderView(data) {
   figure.innerHTML = 
     `<img src="img/artists/${data.artist_name.toLowerCase()}.jpg" width="100%" />`;
   linksEl.innerHTML = `<a href="${data.url}" class="artist-url" target="blank">
-      🔊 Escucha
+    <span style="font-size:2rem;line-height:.2">&#x223F;</span> 
+    Escucha
+    <span style="font-size:1.5rem;line-height:.8;float:right">&#x21e5;</span> 
     </a>`;
   aboutEl.innerHTML = `
     <h2 class="${artistHeadingCls}">${data.artist_name} 

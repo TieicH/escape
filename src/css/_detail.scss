@@ -34,6 +34,19 @@ main#artist {
   text-align: center;
 }
 
+#artist--links a {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  background: rgba(100, 100, 100, .5);
+  text-decoration: none;
+  box-sizing: border-box;
+  &:hover {
+    background: rgba(100, 100, 100, 1);
+    color: #000;
+  }
+}
+
 #artist--photo {
   max-height: 350px;
   overflow: hidden;
@@ -41,7 +54,7 @@ main#artist {
 }
 
 #artist--about {
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   background:rgba( 0, 0, 0, 1);
 
   .artist--name {

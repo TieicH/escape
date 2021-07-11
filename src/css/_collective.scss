@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-
 .artist-card {
   width: 200px;
   height: 200px;
@@ -14,14 +13,16 @@
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  padding: 10px;
 
   img {
-    height: 100%;
-    width: 100%;
+    height: 98%;
+    width: 98%;
     object-fit: cover;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 1%;
+    left: 1%;
     transition: .5s ease-out;
   }
 }

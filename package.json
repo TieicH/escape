@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified yet\" && exit 1",
     "scss": "node-sass src/css/styles.scss dist/css/styles.css",
     "css:watch": "npm run scss && node-sass dist/css/styles.scss -wo src/css",
-    "start": "npm run gulp & serve dist/",
-    "build": "npm run gulp"
+    "start": "gulp & serve dist/",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@
   "description": "website escape",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified yet\" && exit 1",
     "scss": "node-sass src/css/styles.scss dist/css/styles.css",
     "css:watch": "npm run scss && node-sass dist/css/styles.scss -wo src/css",
     "start": "npm run gulp & serve dist/",

@@ -1,4 +1,7 @@
 data/
+.netlify
+
+*.DS_Store
 
 *.css
 

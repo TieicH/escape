@@ -72,10 +72,13 @@ main#artist {
 
 .pager {
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 2rem;
   background: rgba( 0, 0, 0, .5);
-  padding: 2rem;
-  position: absolute;
+  border:rgba( 255, 255, 255, .5) 1px solid;
+    
+  padding: 1rem;
+  position: fixed;
+  bottom: 0%;
 
   &#prev {
     left: 0;
@@ -89,7 +92,7 @@ main#artist {
 @media screen and (min-width: 768px) {
   
   #artist--about {
-    padding: 0 4rem;
+    padding: 2rem 4rem;
     flex-shrink: 2;
 
     .artist--name {
@@ -102,15 +105,23 @@ main#artist {
   #artist--photo {
     width: 50%;
     max-width: 300px;
+    max-height: inherit;
+    align-self: center;
   }
 
   #artist--detail {
-    max-width: 900px;
+    max-width:1090px;
     min-width: 768px;
     justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
     //border-top: 1px solid silver;
+
+    background-image: url('../img/LINES.png');
+  }
+
+  #centered-container {
     padding: 3rem;
-    background:rgba( 0, 0, 0, 1);
   }
 
   #artist--main {
@@ -119,6 +130,9 @@ main#artist {
   }
 
   .pager {
+    text-decoration: none;
+    font-size: 3rem;
+    padding: 2rem;
     align-self:center;
     position: relative;
   }

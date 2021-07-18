@@ -1,4 +1,4 @@
-const { pipe, task, src, dest, watch } = require('gulp');
+const { pipe, task, src, dest, watch, series } = require('gulp');
 const del = require('del');
 const fileinclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('node-sass'));
@@ -6,7 +6,7 @@ const serve = require('gulp-serve');
  
 const DIST_DIR = './dist';
 
-task('fileinclude', function() {
+task('processHtml', function() {
   console.log('processing html files');
   return src(['src/*.html'])
     .pipe(fileinclude({
@@ -16,7 +16,7 @@ task('fileinclude', function() {
     .pipe(dest('./dist'));
 });
 
-const processHtmlFiles = task('fileinclude');
+const processHtmlFiles = task('processHtml');
 
 task('copyJs', function() {
   console.log("moving javascript");
@@ -43,24 +43,23 @@ task('buildStyles', function() {
 
 const buildStyles = task('buildStyles');
 
-
-task('clean', function(cb) {
+task('clean', function() {
   // You can use multiple globbing patterns as you would with `gulp.src`
   console.log('running cleaning');
-  del(DIST_DIR, cb);
+  return del(DIST_DIR);
 });
 
 const clean = task("clean");
 
-function defaultTask(cb) {
-  // place code for your default task here
-  clean();
-  processHtmlFiles();
-  buildStyles();
-  copyJs();
-  copyAssets();
-  cb();
-}
+task('default', series('clean', function(cb) {
+    buildStyles();
+    processHtmlFiles();
+    copyAssets();
+    copyJs();
+    cb();
+  }));
+
+const defaultTask = task('default');
 
 task('serve', serve(DIST_DIR));
 

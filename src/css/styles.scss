@@ -1,22 +1,85 @@
 @import "reset";
+@import "detail";
+@import "collective";
 
 $blue: blue;
 
 body {
   background-color: #000;
+  background-image: url('../img/escape_bg2.png');
+  background-position: top right;
+  background-repeat: no-repeat;
   color: #FFF;
   display: flex;
   flex-direction: column;
-  font-family: 'Inconsolata', monospace;
+  position: relative;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+
+  &.no-bg {
+    background-image: none;
+  }
 }
 
 a {
   color: #FFF;
 }
 
-header {
-  border-bottom: 1px solid white;
+p {
+  line-height: 1.5;
+}
+
+#header-contents {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-height: 80px;
+}
+
+header {
+  position: relative;
+  background-color: rgba( 0, 0, 0, .5);
+}
+
+// header::before {
+//   content: "";
+//   background-image: url('../img/escape_bg2.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   opacity: .8;
+//   position: absolute;
+//   top: 0px;
+//   right: 0px;
+//   bottom: 0px;
+//   left: 0px;
+// }
+
+#logo {
+  top: 5px;
+  left: -10px;
+  position: relative;
+  width: 200px;
+}
+
+footer {
+  padding: 2rem;
+}
+
+nav {
+  margin: 0 4rem;
+  font-size: 1.2rem;
+
+  a {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+
+    &.selected, &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 footer {
@@ -26,33 +89,88 @@ footer {
 
 main {
   flex: 2 1 90vh;
+  margin: 2rem 0rem;
+}
+
+
+#logo-container {
+  width: 30%;
+  max-width: 200px;
+  height: 80px;
+  img {
+    object-fit: cover;
+    width:100%;
+    height: 100%;
+  }
+  
+}
+
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: relative;
+}
+
+#nav-mobile-icon {
+  border: 1px solid white;
+  padding: 10px;
+  transform: rotate(90deg);
+  transition: .2s .0s transform ease-out;
+}
+
+#nav-links {
+  display: none;
+}
+
+nav.open {
+  #nav-mobile-icon {
+    border: none;
+    transform: rotate(0deg);
+  }
+  #nav-links {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    border: 1px solid white;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex--row--at-md {
+    flex-direction: row !important;
+  }
+
+  #logo {
+    position: relative;
+    width: 250px;
+  }
+
+  #nav-mobile-icon {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex;
+  }
+}
+
+.col--centered {
+  justify-content: center;
+}
+
+.text--centered {
   text-align: center;
 }
 
-.centered-col {
+
+#enter {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-#artists {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.artist-card {
-  width: 200px;
-  height: 200px;
-  background-size: cover;
-  margin: 1rem;
-  position: relative;
-}
-
-.artist-info {
-  background-color: rgba($color: #000, $alpha: 0.6);
-  text-transform: uppercase;
-  font-size: 1rem;
-  position: relative;
-  bottom: -88%;
 }

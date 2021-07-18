@@ -46,7 +46,7 @@ const buildStyles = task('buildStyles');
 
 task('clean', function(cb) {
   // You can use multiple globbing patterns as you would with `gulp.src`
-  console.log('cleaning');
+  console.log('running cleaning');
   del(DIST_DIR, cb);
 });
 
@@ -65,6 +65,7 @@ function defaultTask(cb) {
 task('serve', serve(DIST_DIR));
 
 exports.watch = function () {
+  console.log('running watch');
   watch('./src/css/*.scss', buildStyles);
   watch('./src/js/*.js', copyJs);
   watch(['./src/**/*.html', './src/includes/*.html'], processHtmlFiles);

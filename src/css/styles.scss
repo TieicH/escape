@@ -110,6 +110,36 @@ main {
   flex-direction: column;
 }
 
+nav {
+  position: relative;
+}
+
+#nav-mobile-icon {
+  border: 1px solid white;
+  padding: 10px;
+  transform: rotate(90deg);
+  transition: .2s .0s transform ease-out;
+}
+
+#nav-links {
+  display: none;
+}
+
+nav.open {
+  #nav-mobile-icon {
+    border: none;
+    transform: rotate(0deg);
+  }
+  #nav-links {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    border: 1px solid white;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 120px;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .flex--row--at-md {
@@ -119,6 +149,14 @@ main {
   #logo {
     position: relative;
     width: 250px;
+  }
+
+  #nav-mobile-icon {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex;
   }
 }
 

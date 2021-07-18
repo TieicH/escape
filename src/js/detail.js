@@ -1,6 +1,9 @@
 import { getArtists, getArtistDetailInfo, artistObjectFromColumns } from "./data.js";
+import fotoUrls from "./dj_fotos.js";
 
 let artistsTotal;
+
+const imgRoute = "https://d1ntozumzmh538.cloudfront.net";
 
 function getArtistParam() {
   const params = new URLSearchParams(window.location.search);
@@ -17,7 +20,7 @@ function renderView(data) {
   const artistLocationCls = "artist--location";
 
   figure.innerHTML = 
-    `<img src="img/artists/${data.artist_name.toLowerCase()}.jpg" width="100%" />`;
+    `<img src="${imgRoute}/${fotoUrls[data.artist_name.toLowerCase()]}" width="100%" />`;
   linksEl.innerHTML = `<a href="${data.url}" class="artist-url" target="blank">
     <span style="font-size:2rem;line-height:.2">&#x223F;</span> 
     Escucha
@@ -66,3 +69,8 @@ document.querySelectorAll(".pager").forEach((el) => el.addEventListener('click',
 
 window.onpopstate = loadArtistInfo2;
 window.onload = loadArtistInfo2;
+
+
+document.querySelector("nav").addEventListener("click", (e) => {
+  document.querySelector("nav").classList.toggle("open");
+})

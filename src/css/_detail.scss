@@ -7,7 +7,7 @@ main#artist {
   margin: 0;
 }
 
-#artist--detail p {
+#artist--detail p, #animation-container p {
   font-size: 1.2rem;
   background-color: black;
 }
@@ -104,25 +104,34 @@ main#artist {
   
   #artist--photo {
     width: 50%;
-    max-width: 300px;
+    max-width: 200px;
     max-height: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  #artist--detail {
+  #artist--detail  {
     max-width:1090px;
     min-width: 768px;
     justify-content: space-around;
     align-items: center;
     align-content: flex-start;
+    overflow: hidden;
     //border-top: 1px solid silver;
 
-    background-image: url('../img/LINES.png');
+    //background-image: url('../img/LINES.png');
   }
 
-  #centered-container {
+  canvas {
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    overflow: hidden;
+    width: 100% !important;
+  }
+
+  #animation-container {
     padding: 3rem;
   }
 

@@ -14,7 +14,7 @@ const renderArtists = (artistsData) => {
           </div>
           <div class="artist-photo">
             <img src="img/artists/${artist.artist_name.toLowerCase()}_p.jpg" />
-            <img src="${imgRoute}/${fotoUrls[artist.artist_name.toLowerCase()]}" />
+            <img src="${imgRoute}/${artist.artist_name.toLowerCase()}.jpg" />
           </div>
         </a>
       </div>`

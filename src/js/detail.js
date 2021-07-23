@@ -20,7 +20,7 @@ function renderView(data) {
   const artistLocationCls = "artist--location";
 
   figure.innerHTML = 
-    `<img src="${imgRoute}/${fotoUrls[data.artist_name.toLowerCase()]}" width="100%" />`;
+    `<img src="${imgRoute}/${data.artist_name.toLowerCase()}.jpg" width="100%" />`;
   linksEl.innerHTML = `<a href="${data.url}" class="artist-url" target="blank">
     <span style="font-size:2rem;line-height:.2">&#x223F;</span> 
     Escucha

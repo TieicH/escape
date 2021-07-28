@@ -1,6 +1,7 @@
 @import "reset";
 @import "detail";
 @import "collective";
+@import "past_events";
 
 $blue: blue;
 
@@ -43,19 +44,6 @@ header {
   background-color: rgba( 0, 0, 0, .5);
 }
 
-// header::before {
-//   content: "";
-//   background-image: url('../img/escape_bg2.png');
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   opacity: .8;
-//   position: absolute;
-//   top: 0px;
-//   right: 0px;
-//   bottom: 0px;
-//   left: 0px;
-// }
-
 #logo {
   top: 5px;
   left: -10px;
@@ -82,16 +70,33 @@ nav {
   }
 }
 
+p {
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
 footer {
   border-top: 1px solid white;
   flex: 1;
 }
 
 main {
-  flex: 2 1 90vh;
+  flex: 2 1 80vh;
   margin: 2rem 0rem;
 }
 
+.section---centered {
+  max-width:1090px;
+  min-width: 768px;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+  overflow: hidden;
+}
 
 #logo-container {
   width: 30%;

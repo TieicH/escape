@@ -1,9 +1,7 @@
 
 /* --- collective page --- */
 #artists {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   max-width: 1092px;
 }
 
@@ -27,27 +25,27 @@
     transition: .5s ease-out;
   }
 }
+// pixelated effect
+// .artist-photo {
+//   img:first-child {
+//     opacity: 1;
+//     z-index: 2;
+//     image-rendering: pixelated;
+//   }
+//   img:last-child {
+//     opacity: 1;
+//   }
+// }
 
-.artist-photo {
-  img:first-child {
-    opacity: 1;
-    z-index: 2;
-    image-rendering: pixelated;
-  }
-  img:last-child {
-    opacity: 1;
-  }
-}
+// .artist-photo:hover {
+//   img:first-child {
+//     opacity: 0;
+//   }
 
-.artist-photo:hover {
-  img:first-child {
-    opacity: 0;
-  }
-
-  img:last-child {
-    opacity: 1;
-  }
-}
+//   img:last-child {
+//     opacity: 1;
+//   }
+// }
 
 main {
   justify-content: space-around;

@@ -2,14 +2,18 @@
 /* --- detail page --- */
 
 main#artist {
-   display: flex;
+  display: flex;
   justify-content: space-around;  
+  align-items: center;
   margin: 0;
+  p {
+    font-size: 1.2rem;
+    background-color: black;
+  }
 }
 
-#artist--detail p, #animation-container p {
-  font-size: 1.2rem;
-  background-color: black;
+#artist--detail {
+  min-height: 40vh;
 }
 
 .artist--info {
@@ -109,18 +113,6 @@ main#artist {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  #artist--detail  {
-    max-width:1090px;
-    min-width: 768px;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    overflow: hidden;
-    //border-top: 1px solid silver;
-
-    //background-image: url('../img/LINES.png');
   }
 
   canvas {

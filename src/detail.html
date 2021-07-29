@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
-  @@include('./includes/head.html')
-  <body>
-    @@include('includes/header.html')
-    <main id="artist" data-animation-container="true">
-      <a href="#" id="prev" class="pager">&#8676;</a>
-      <section id="artist--detail" class="flex--column flex--row--at-md">
-        
-          <div id="artist--photo">
-            <figure></figure>
-            <div id="artist--links"></div>
+@@include('includes/head.html')
+
+<body style="position:relative">
+  @@include('includes/header.html')
+  <main id="artist-page" data-animation-container="true">
+    <div id="artist-info-container">
+      <a href="#" data-pager="prev" class="pager">&#8676;</a>
+      <section id="artist--detail" class="flex--column flex--row--at-md section--centered">
+        <div id="artist--photo">
+          <figure></figure>
+          <div id="artist--links"></div>
+        </div>
+        <div id="artist--about">
+          <div id="pager-container--mobile">
+            <a href="#" data-pager="prev" class="pager mobile">&#8676;</a>
+            <a href="#" data-pager="next" class="pager mobile">&#8677;</a>
           </div>
-          <div id="artist--about"></div>
-        
+          <div id="description"></div>
+        </div>
       </section>
-      <a href="#" id="next" class="pager">&#8677;</a>
-    </main>
-    <footer>©© 2021 ESCAPE </footer>
-    <script src="js/detail.js" type="module"></script>
-    <script src="js/movingFields_escape.p5.js"></script>
-  </body>
+      <a href="#" data-pager="next" class="pager">&#8677;</a>
+    </div>
+    <section id="player-section">
+      <div id="player-container">
+        <iframe id="player" width="460" height="20" scrolling="no" frameborder="no" allow="autoplay">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  @@include('includes/footer.html')
+  <script src="js/detail.js" type="module"></script>
+  <script src="js/movingFields_escape.p5.js"></script>
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+  <script src="js/soundcloud.js"></script>
+</body>
+
 </html>

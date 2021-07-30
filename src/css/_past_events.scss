@@ -1,10 +1,18 @@
 #about  {
-  max-width:900px;
-  min-width: 768px;
-  justify-content: space-around;
-  align-items: center;
-  align-content: flex-start;
-  overflow: hidden;
-  //border-top: 1px solid silver;
-  //background-image: url('../img/LINES.png');
+  padding: 2rem;
+  flex-direction: column;
+  align-self: center;
+}
+
+#past_events_video {
+  width: 90vw;
+  height: calc(90vw/1.77);
+  max-width: 700px;
+ }
+
+@media screen and (min-width: 768px) {
+  #about  {
+    max-width:900px;
+    min-width: 768px;
+  }
 }

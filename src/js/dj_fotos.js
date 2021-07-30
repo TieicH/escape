@@ -1,4 +1,4 @@
-const imgRoute = "https://d1ntozumzmh538.cloudfront.net";
+const imgRoute = "https://d1ntozumzmh538.cloudfront.net/imagesEscape";
 const extension = ".png";
 
 export const getImageUrl = (artistName) => `${imgRoute}/${artistName.split(" ").join("_").toLowerCase()}${extension}`;

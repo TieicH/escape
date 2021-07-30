@@ -1,0 +1,18 @@
+#about  {
+  padding: 2rem;
+  flex-direction: column;
+  align-self: center;
+}
+
+#past_events_video {
+  width: 90vw;
+  height: calc(90vw/1.77);
+  max-width: 700px;
+ }
+
+@media screen and (min-width: 768px) {
+  #about  {
+    max-width:900px;
+    min-width: 768px;
+  }
+}

@@ -1,5 +1,5 @@
 import { getArtists, getArtistDetailInfo, artistObjectFromColumns } from "./data.js";
-import fotoUrls from "./dj_fotos.js";
+import { getImageUrl } from "./dj_fotos.js";
 
 let artistsTotal;
 
@@ -15,23 +15,25 @@ function getArtistParam() {
 function renderView(data) {
   const figure = document.querySelector("figure");
   const linksEl = document.querySelector("#artist--links");
-  const aboutEl = document.querySelector("#artist--about");
+  const aboutEl = document.querySelector("#description");
   const artistHeadingCls = "artist--name";
   const artistLocationCls = "artist--location";
 
   figure.innerHTML = 
-    `<img src="${imgRoute}/${data.artist_name.toLowerCase()}.jpg" width="100%" />`;
+    `<img src="${getImageUrl(data.artist_name)}" width="100%" />`;
   linksEl.innerHTML = `<a href="${data.url}" class="artist-url" target="blank">
     <span style="font-size:2rem;line-height:.2">&#x223F;</span> 
-    Escucha
-    <span style="font-size:1.5rem;line-height:.8;float:right">&#x21e5;</span> 
+    Escucha &nbsp;
+    <span style="font-size:1.5rem;line-height:.8;float:right">&#x2750;</span> 
     </a>`;
+  //const div = document.createElement("div");
   aboutEl.innerHTML = `
     <h2 class="${artistHeadingCls}">${data.artist_name} 
       <span class="${artistLocationCls}">[ ${data.location} ]</span>
     </h2>
     <p>${data.desc}</p>
   `
+  //aboutEl.appendChild(div);
 }
 
 function loadArtistInfo2 () {
@@ -42,15 +44,12 @@ function loadArtistInfo2 () {
     renderView(artistData);
   })
 }
-// function loadArtistInfo() {
-//   getArtistDetailInfo(getArtistParam()).then(renderView);
-// }
 
 function pageArtist(e) {
   e.preventDefault();
 
   const artistId = parseInt(getArtistParam(), 10);
-  let newArtistId = (e.currentTarget.id === 'next') ? artistId + 1 : artistId - 1;
+  let newArtistId = (e.currentTarget.dataset.pager === 'next') ? artistId + 1 : artistId - 1;
   if (newArtistId > artistsTotal) {
     newArtistId = 0;
   } else if (newArtistId < 0) {
@@ -69,7 +68,6 @@ document.querySelectorAll(".pager").forEach((el) => el.addEventListener('click',
 
 window.onpopstate = loadArtistInfo2;
 window.onload = loadArtistInfo2;
-
 
 document.querySelector("nav").addEventListener("click", (e) => {
   document.querySelector("nav").classList.toggle("open");

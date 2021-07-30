@@ -5,13 +5,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    @@include('includes/header.html')
-    <div class="border"></div>
+    @@include('includes/header.html', {"page": "collective"})
     <main>
-      <section id="artists">
+      <section id="artists" class="section--centered">
       </section>
     </main>
-    <footer>2021</footer>
+    @@include('includes/footer.html')
     <script src="js/convocatoria.js" type="module"></script>
   </body>
 </html>

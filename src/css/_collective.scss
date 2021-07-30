@@ -3,15 +3,14 @@
 #artists {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   max-width: 1092px;
+  justify-content: center;
 }
 
 .artist-card {
-  width: 200px;
-  height: 200px;
-  
-  margin: 1rem;
+  width: 140px;
+  height: 140px;
+  margin: .5rem;
   position: relative;
   overflow: hidden;
   background-color: rgba($color: #000000, $alpha: 0.5);
@@ -26,32 +25,57 @@
     left: 1%;
     transition: .5s ease-out;
   }
-}
 
-.artist-photo {
-  img:first-child {
-    opacity: 1;
-    z-index: 2;
-    image-rendering: pixelated;
-  }
-  img:last-child {
-    opacity: 1;
-  }
-}
+  .artist-info {
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    left: 0px;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
+    box-sizing: border-box;
 
-.artist-photo:hover {
-  img:first-child {
-    opacity: 0;
-  }
-
-  img:last-child {
-    opacity: 1;
+    h3 {
+      margin-bottom: 2px;
+    }
   }
 }
+// pixelated effect
+// .artist-photo {
+//   img:first-child {
+//     opacity: 1;
+//     z-index: 2;
+//     image-rendering: pixelated;
+//   }
+//   img:last-child {
+//     opacity: 1;
+//   }
+// }
+
+// .artist-photo:hover {
+//   img:first-child {
+//     opacity: 0;
+//   }
+
+//   img:last-child {
+//     opacity: 1;
+//   }
+// }
 
 main {
   justify-content: space-around;
   display: flex;
 }
 
+@media screen and (min-width: 720px) {
+  .artist-card {
+
+  width: 200px;
+  height: 200px;
+  }
+}
 /* --- end collective page --- */

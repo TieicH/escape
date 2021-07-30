@@ -1,20 +1,16 @@
-
 import { getArtistsBasicInfo } from "./data.js";
-import fotoUrls from "./dj_fotos.js";
-
-const imgRoute = "https://d1ntozumzmh538.cloudfront.net";
+import { getImageUrl } from "./dj_fotos.js";
 
 const renderArtists = (artistsData) => {
   const artistsHtml = artistsData.map(artist => {
     return `<div class="artist-card" data-row="${artist.row}">
         <a href="detail?artist=${artist.row}">
           <div class="artist-info">
-            <h3>${artist.artist_nam}</h3>
+            <h3>${artist.artist_name}</h3>
             <div>[ ${artist.location} ] </div>
           </div>
           <div class="artist-photo">
-            <img src="img/artists/${artist.artist_name.toLowerCase()}_p.jpg" />
-            <img src="${imgRoute}/${artist.artist_name.toLowerCase()}.jpg" />
+            <img src="${getImageUrl(artist.artist_name)}" />
           </div>
         </a>
       </div>`

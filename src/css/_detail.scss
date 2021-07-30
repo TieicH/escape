@@ -1,15 +1,29 @@
 
 /* --- detail page --- */
 
-main#artist {
-   display: flex;
-  justify-content: space-around;  
-  margin: 0;
+#artist-page {
+  flex-direction: column;
+  // margin-top: 0px;
 }
 
-#artist--detail p, #animation-container p {
-  font-size: 1.2rem;
-  background-color: black;
+#artist-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  align-items: center;
+  margin: 0;
+  p {
+    font-size: 1.2rem;
+    background-color: black;
+  }
+
+  & > .pager {
+    display: none; //desktop pagers
+  }
+}
+
+canvas {
+  display: none;
 }
 
 .artist--info {
@@ -34,26 +48,33 @@ main#artist {
   text-align: center;
 }
 
-#artist--links a {
-  display: inline-block;
-  width: 100%;
-  padding: 5px;
-  background: rgba(100, 100, 100, .5);
-  text-decoration: none;
-  box-sizing: border-box;
-  &:hover {
-    background: rgba(100, 100, 100, 1);
-    color: #000;
+#artist--links {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    background: rgba(0, 0, 0, .5);
+    text-decoration: none;
+    box-sizing: border-box;
+    &:hover {
+      background: rgba(100, 100, 100, 1);
+      color: #000;
+    }
   }
 }
 
 #artist--photo {
+  position: relative;
   max-height: 350px;
   overflow: hidden;
   background:rgba( 0, 0, 0, 1);
 }
 
 #artist--about {
+  position: relative;
   padding: 0 1rem 1rem;
   background:rgba( 0, 0, 0, 1);
 
@@ -68,6 +89,15 @@ main#artist {
   font-weight: normal;
   font-size: 1.2rem;
   font-family: monospace;
+  display: block;
+  margin: .5rem 0;
+}
+
+#pager-container--mobile {
+  position: sticky;
+  top: 0%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .pager {
@@ -78,19 +108,45 @@ main#artist {
     
   padding: 1rem;
   position: fixed;
-  bottom: 0%;
 
-  &#prev {
+  &[data-pager="prev"] {
     left: 0;
   }
 
-  &#next {
+  &[data-pager="next"] {
     right: 0;
   }
 }
 
+#player-container {
+  border: 1px solid white;
+  background-color: black;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 80px;
+}
+
+#player {
+  box-sizing: content-box;
+  padding: 5px 0px;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 768px) {
-  
+  #artist-info-container {
+    flex-direction: row;
+  }
+
+  .artist--location {
+    display: inline;
+    margin: 0;
+  }
+
+  #artist--detail {
+    min-height: 40vh;
+  }
+
   #artist--about {
     padding: 2rem 4rem;
     flex-shrink: 2;
@@ -104,26 +160,17 @@ main#artist {
   
   #artist--photo {
     width: 50%;
-    max-width: 200px;
+    max-width: 250px;
     max-height: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-
-  #artist--detail  {
-    max-width:1090px;
-    min-width: 768px;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    overflow: hidden;
-    //border-top: 1px solid silver;
-
-    //background-image: url('../img/LINES.png');
+    // justify-content: center;
+    align-self: flex-start;
+    padding: 2rem 0 0 2rem;
   }
 
   canvas {
+    display: block;
     position: absolute;
     z-index: -1;
     left: 0px;
@@ -135,16 +182,37 @@ main#artist {
     padding: 3rem;
   }
 
-  #artist--main {
-    display: flex;
-    justify-content: space-around;  
-  }
-
   .pager {
+    display: block !important;
+    top: 20%;
     text-decoration: none;
     font-size: 3rem;
     padding: 2rem;
     align-self:center;
     position: relative;
+  }
+
+  #pager-container--mobile {
+    display: none;
+  }
+
+  #player {
+    max-width: 420px;
+    margin-right: 10px;
+  }
+
+  #player-section {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #player-container {
+    // display:flex;
+    display: inline-block;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: fit-content;
+    // justify-content:flex-end;
   }
 }

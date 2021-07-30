@@ -3,7 +3,7 @@
 @@include('includes/head.html')
 
 <body style="position:relative">
-  @@include('includes/header.html')
+  @@include('includes/header.html', {"page": "collective"}))
   <main id="artist-page" data-animation-container="true">
     <div id="artist-info-container">
       <a href="#" data-pager="prev" class="pager">&#8676;</a>
@@ -32,9 +32,18 @@
 
   @@include('includes/footer.html')
   <script src="js/detail.js" type="module"></script>
-  <script src="js/movingFields_escape.p5.js"></script>
+  <!-- <script src="js/movingFields_escape.p5.js"></script> -->
   <script src="https://w.soundcloud.com/player/api.js"></script>
   <script src="js/soundcloud.js"></script>
+  <script>
+    console.log(document.body.clientWidth);
+    if (document.body.clientWidth > 760) {
+      const script = document.createElement('script');
+      script.src = 'js/movingFields_escape.p5.js';
+      script.type = 'text/javascript';
+      document.body.appendChild(script)
+    };
+  </script>
 </body>
 
 </html>

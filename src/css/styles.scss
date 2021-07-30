@@ -30,6 +30,7 @@ footer {
   padding: 2rem;
   border-top: 1px solid white;
   flex: 1;
+  min-height: 80px;
 }
 
 h1 {
@@ -53,7 +54,7 @@ header {
 
 main {
   flex: 2 1 75vh;
-  margin: 2rem 0rem;
+  // margin: 2rem 0rem;
 }
 
 nav {
@@ -147,6 +148,10 @@ p {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    margin-bottom: 2rem;
+  }
+  
   .flex--row--at-md {
     flex-direction: row !important;
   }

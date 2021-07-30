@@ -2,7 +2,7 @@ data/
 .netlify
 
 *.DS_Store
-
+*.code-workspace
 *.css
 
 .DS_Store

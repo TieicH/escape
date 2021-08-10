@@ -1,13 +1,14 @@
-import { getArtists, getArtistDetailInfo, artistObjectFromColumns } from "./data.js";
+import { getArtists, artistObjectFromColumns } from "./data.js";
 import { getImageUrl } from "./dj_fotos.js";
 
 let artistsTotal;
+let artistsData = [];
 
 const imgRoute = "https://d1ntozumzmh538.cloudfront.net";
 
 function getArtistParam() {
   const params = new URLSearchParams(window.location.search);
-  const row = params.get("artist");
+  const row = params.get("artist") || 0;
   console.log(row);
   return row;
 }
@@ -36,12 +37,18 @@ function renderView(data) {
   //aboutEl.appendChild(div);
 }
 
-function loadArtistInfo2 () {
+function loadArtistInfo(artistId) {
+  if (artistsData.length) {
+    const artist = artistObjectFromColumns(artistsData[artistId]);
+    renderView(artist);
+    return;
+  }
+
   getArtists().then((data) => {
-    const artistsArray = data.values;
-    const artistData = artistObjectFromColumns(artistsArray[getArtistParam()]);
-    artistsTotal = artistsArray.length - 1; // HEADER ROW
-    renderView(artistData);
+    artistsData = data.values;
+    artistsTotal = artistsData.length - 1; // account for HEADER ROW with - 1
+    const artist = artistObjectFromColumns(artistsData[artistId]);
+    renderView(artist);
   })
 }
 
@@ -61,13 +68,24 @@ function pageArtist(e) {
     'test',
     url
   );
-  loadArtistInfo2();
+  const artist = artistObjectFromColumns(artistsData[newArtistId]);
+  renderView(artist);
+  // loadArtistInfo();
 }
 
 document.querySelectorAll(".pager").forEach((el) => el.addEventListener('click', pageArtist));
 
-window.onpopstate = loadArtistInfo2;
-window.onload = loadArtistInfo2;
+window.onpopstate = loadArtistInfo(getArtistParam());
+window.onload = () => {
+  loadArtistInfo(getArtistParam());
+  // const player = document.querySelector('iframe');
+  // const screenW = window.screen.width;
+  // const buttonW = document.querySelector('#ffwd').offsetWidth;
+  // const logoWidth = player.querySelector(".logo").clientWidth;
+  // if (screenW < player.offsetWidth) {
+  //   player.width = (screenW - buttonW) - 2 // border // + logoWidth/2;
+  // }
+}
 
 document.querySelector("nav").addEventListener("click", (e) => {
   document.querySelector("nav").classList.toggle("open");

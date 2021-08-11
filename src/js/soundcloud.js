@@ -6,7 +6,8 @@ const soundcloudUrls = [
   'https://api.soundcloud.com/tracks/1084196947',
   'https://api.soundcloud.com/tracks/1081576846',
   'https://api.soundcloud.com/tracks/560059443',
-  'https://api.soundcloud.com/tracks/1035861556'
+  'https://api.soundcloud.com/tracks/1035861556',
+  'https://api.soundcloud.com/tracks/967656496'
 ];
 const iframe = document.querySelector('iframe');
 
@@ -47,8 +48,8 @@ iframe.src = `${playerSrc}?url=${encodeURI(getUrlAtIndex(getRandomIndex()))}&col
 document.querySelector('#ffwd').addEventListener("click", (e) => {
   e.preventDefault();
   loadNextSong();
-  widget.bind(SC.Widget.Events.READY, () => {
-    widget.play();
-    widget.unbind(SC.Widget.Events.READY);
-  });
+  // widget.bind(SC.Widget.Events.READY, () => {
+  //   widget.play();
+  //   widget.unbind(SC.Widget.Events.READY);
+  // });
 });

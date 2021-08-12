@@ -44,6 +44,42 @@
     }
   }
 }
+
+.artist-card {
+  background-color: rgba($color: #EEEEEE, $alpha: 0.2);
+  height: 100%;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation-name: blink;
+  animation-duration: .1s;
+  //animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 5;
+}
+
+// .animate-opacity {
+//   transition: opacity 4s ease-out;
+// }
+
+.opacity--0 {
+  opacity: 0;
+}
+
+.opacity--1 {
+  opacity: 1;
+}
+
 // pixelated effect
 // .artist-photo {
 //   img:first-child {

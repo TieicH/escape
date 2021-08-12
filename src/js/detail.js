@@ -1,5 +1,9 @@
 import { getArtists, artistObjectFromColumns } from "./data.js";
 import { getImageUrl } from "./dj_fotos.js";
+import { lazyLoad,
+  noOpacityClass,
+  lazyLoadAttribute,
+  lazySrc } from './lazyLoad.js';
 
 let artistsTotal;
 let artistsData = [];
@@ -9,7 +13,6 @@ const imgRoute = "https://d1ntozumzmh538.cloudfront.net";
 function getArtistParam() {
   const params = new URLSearchParams(window.location.search);
   const row = params.get("artist") || 0;
-  console.log(row);
   return row;
 }
 
@@ -21,7 +24,12 @@ function renderView(data) {
   const artistLocationCls = "artist--location";
 
   figure.innerHTML = 
-    `<img src="${getImageUrl(data.artist_name)}" width="100%" />`;
+    `<div class="${noOpacityClass} animate-opacity">
+      <img src="${lazySrc}"
+        ${lazyLoadAttribute}
+        data-src="${getImageUrl(data.artist_name)}"
+        width="100%" />
+      </div>`;
   linksEl.innerHTML = `<a href="${data.url}" class="artist-url" target="blank">
     <span style="font-size:2rem;line-height:.2">&#x223F;</span> 
     Escucha &nbsp;
@@ -34,7 +42,7 @@ function renderView(data) {
     </h2>
     <p>${data.desc}</p>
   `
-  //aboutEl.appendChild(div);
+  lazyLoad(null, 'opacity--1');
 }
 
 function loadArtistInfo(artistId) {
@@ -75,7 +83,7 @@ function pageArtist(e) {
 
 document.querySelectorAll(".pager").forEach((el) => el.addEventListener('click', pageArtist));
 
-window.onpopstate = loadArtistInfo(getArtistParam());
+window.onpopstate = () => loadArtistInfo(getArtistParam());
 window.onload = () => {
   loadArtistInfo(getArtistParam());
   // const player = document.querySelector('iframe');

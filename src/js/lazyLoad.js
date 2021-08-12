@@ -2,10 +2,11 @@
 export const noOpacityClass = 'opacity--0';
 export const fullOpacityClass = 'opacity--1';
 export const lazyLoadAttribute = 'data-loaded="false"';
+export const lazySrc = "img/clear.gif";
 
-const animationClass = "blinking";
+const _animationClass = "blinking";
 
-const changeOpacity = (el) => {
+const changeOpacity = (el, animationClass=_animationClass) => {
   const parent = el.parentElement;
   if (parent.classList.contains(noOpacityClass)) {
     parent.classList.add(animationClass);
@@ -14,12 +15,12 @@ const changeOpacity = (el) => {
   }
 }
 
-export const lazyLoad = () => {
+export const lazyLoad = (e, animationOverrideCls) => {
  document.querySelectorAll(`img[${lazyLoadAttribute}]`).forEach((el) => {
   if (isElementInViewport(el)) {
     el.src = el.dataset.src;
     el.dataset.loaded = true;
-    el.onload = () => { changeOpacity(el) };
+    el.onload = () => { changeOpacity(el, animationOverrideCls) };
   }
  })
 }

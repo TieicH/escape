@@ -2,6 +2,7 @@
 @import "detail";
 @import "collective";
 @import "enter";
+@import "lazyLoadEffects";
 @import "past_events";
 
 $blue: blue;
@@ -31,7 +32,14 @@ footer {
   padding: 2rem;
   border-top: 1px solid white;
   flex: 1;
-  min-height: 80px;
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
 }
 
 h1 {
@@ -102,7 +110,6 @@ p {
   width: 200px;
 }
 
-
 #logo-container {
   width: 30%;
   max-width: 200px;
@@ -113,6 +120,10 @@ p {
     height: 100%;
   }
   
+}
+
+.flex {
+  display: flex;
 }
 
 .flex--column {
@@ -128,7 +139,6 @@ p {
   text-align: center;
 }
 
-
 #nav-mobile-icon {
   border: 1px solid white;
   padding: 10px;
@@ -138,6 +148,28 @@ p {
 
 #nav-links {
   display: none;
+}
+
+.insta-btn, .fb-btn, .yt-btn {
+  width: 40px;
+  height: 40px;
+  margin: 0px 4px;
+  display: block;
+  background-image: url('../img/social-icons.png');
+  background-size: 300%;
+}
+
+.fb-btn {
+  background-position: 0px 0px;
+}
+
+.insta-btn {
+  background-position: -280px 0px;
+}
+
+.yt-btn {
+  background-position:-560px 0px;
+  margin-left:0;
 }
 
 @media screen and (min-width: 768px) {
@@ -176,7 +208,6 @@ p {
       width: auto;
     }
   }
-
 
   #nav-mobile-icon {
     display: none;

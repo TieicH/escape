@@ -1,6 +1,7 @@
 @import "reset";
 @import "detail";
 @import "collective";
+@import "enter";
 @import "past_events";
 
 $blue: blue;
@@ -114,18 +115,10 @@ p {
   
 }
 
-#enter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
 .flex--column {
   display: flex;
   flex-direction: column;
 }
-
 
 .col--centered {
   justify-content: center;
@@ -165,6 +158,26 @@ p {
     margin: 0 4rem;
   }
   
+  nav.open {
+    #nav-mobile-icon {
+      display: none;
+    }
+
+    li {
+      display: inline;
+    }
+    #nav-links {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      border: none;
+      right: 0;
+      background: transparent;
+      width: auto;
+    }
+  }
+
+
   #nav-mobile-icon {
     display: none;
   }

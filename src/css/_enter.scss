@@ -1,0 +1,12 @@
+
+main#enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 2 1 100vh;
+}
+
+#enter-logo {
+  max-width: 700px;
+}

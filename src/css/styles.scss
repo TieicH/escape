@@ -30,10 +30,11 @@ a {
 
 footer {
   padding: 2rem;
-  border-top: 1px solid white;
+  border-top: 1px solid rgba( 255, 255, 255, .2);
   flex: 1;
-  min-height: 40px;
+  min-height: 70px;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   .social-icons {
@@ -215,6 +216,11 @@ p {
 
   #nav-links {
     display: flex;
+  }
+
+  footer {
+    flex-direction: row;
+    min-height: 40px;
   }
 
   .section--centered {

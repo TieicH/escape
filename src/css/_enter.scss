@@ -5,6 +5,14 @@ main#enter {
   justify-content: center;
 
   flex: 2 1 100vh;
+
+  #animation-container {
+    position: relative;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+  }
 }
 
 #enter-logo {

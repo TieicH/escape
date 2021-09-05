@@ -3,8 +3,25 @@ const del = require('del');
 const fileinclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('node-sass'));
 const serve = require('gulp-serve');
- 
+const template = require('gulp-template');
+const rename = require('gulp-rename');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 const DIST_DIR = './dist';
+
+
+task('envConfig', function() {
+  const CONFIG_PATH = 'src/js/env_config.template.js';
+  const { API_KEY, SHEET_ID } = process.env;
+  return src(CONFIG_PATH)
+    .pipe(template({ API_KEY, SHEET_ID }))
+    .pipe(rename('config.js'))
+    .pipe(dest(`${DIST_DIR}/js`));
+});
+
+const envConfig = task('envConfig');
 
 task('processHtml', function() {
   console.log('processing html files');
@@ -13,7 +30,7 @@ task('processHtml', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(dest('./dist'));
+    .pipe(dest(DIST_DIR));
 });
 
 const processHtmlFiles = task('processHtml');
@@ -52,6 +69,7 @@ task('clean', function() {
 const clean = task("clean");
 
 task('default', series('clean', function(cb) {
+    envConfig();
     buildStyles();
     processHtmlFiles();
     copyAssets();

@@ -1,6 +1,6 @@
 import { getArtistsBasicInfo } from "./data.js";
 import { getImageUrl } from "./dj_fotos.js";
-import { lazyLoad, noOpacityClass, lazyLoadAttribute } from './lazyLoad.js';
+import { lazyLoad, noOpacityClass, lazyLoadAttribute, lazySrc } from './lazyLoad.js';
 
 const renderArtists = (artistsData) => {
   return new Promise(resolve => {
@@ -12,7 +12,7 @@ const renderArtists = (artistsData) => {
               <div>[ ${artist.location} ] </div>
             </div>
             <div class="artist-photo ${noOpacityClass}">
-              <img src="img/clear.gif" data-src="${getImageUrl(artist.artist_name)}" ${lazyLoadAttribute} />
+              <img src="${lazySrc}" data-src="${getImageUrl(artist.artist_name)}" ${lazyLoadAttribute} />
             </div>
           </a>
         </div>`

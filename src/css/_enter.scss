@@ -1,0 +1,45 @@
+
+main#enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 2 1 100vh;
+
+  a {
+    display: block;
+  }
+
+  #animation-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+  }
+
+
+  canvas {
+    top: 0;
+    position: relative;
+    display: block !important;
+  }
+}
+
+#enter-logo {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  z-index: 2;
+  max-width: 700px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  #enter-logo {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+  }
+}

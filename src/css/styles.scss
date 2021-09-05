@@ -1,6 +1,8 @@
 @import "reset";
 @import "detail";
 @import "collective";
+@import "enter";
+@import "lazyLoadEffects";
 @import "past_events";
 
 $blue: blue;
@@ -28,9 +30,17 @@ a {
 
 footer {
   padding: 2rem;
-  border-top: 1px solid white;
+  border-top: 1px solid rgba( 255, 255, 255, .2);
   flex: 1;
-  min-height: 80px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
 }
 
 h1 {
@@ -101,7 +111,6 @@ p {
   width: 200px;
 }
 
-
 #logo-container {
   width: 30%;
   max-width: 200px;
@@ -114,18 +123,14 @@ p {
   
 }
 
-#enter {
+.flex {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-
 
 .flex--column {
   display: flex;
   flex-direction: column;
 }
-
 
 .col--centered {
   justify-content: center;
@@ -134,7 +139,6 @@ p {
 .text--centered {
   text-align: center;
 }
-
 
 #nav-mobile-icon {
   border: 1px solid white;
@@ -145,6 +149,28 @@ p {
 
 #nav-links {
   display: none;
+}
+
+.insta-btn, .fb-btn, .yt-btn {
+  width: 40px;
+  height: 40px;
+  margin: 0px 4px;
+  display: block;
+  background-image: url('../img/social-icons.png');
+  background-size: 300%;
+}
+
+.fb-btn {
+  background-position: 0px 0px;
+}
+
+.insta-btn {
+  background-position: -280px 0px;
+}
+
+.yt-btn {
+  background-position:-560px 0px;
+  margin-left:0;
 }
 
 @media screen and (min-width: 768px) {
@@ -165,12 +191,36 @@ p {
     margin: 0 4rem;
   }
   
+  nav.open {
+    #nav-mobile-icon {
+      display: none;
+    }
+
+    li {
+      display: inline;
+    }
+    #nav-links {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      border: none;
+      right: 0;
+      background: transparent;
+      width: auto;
+    }
+  }
+
   #nav-mobile-icon {
     display: none;
   }
 
   #nav-links {
     display: flex;
+  }
+
+  footer {
+    flex-direction: row;
+    min-height: 40px;
   }
 
   .section--centered {

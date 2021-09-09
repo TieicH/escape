@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+@@include('includes/head.html')
+<body style="position:relative">
+  @@include('includes/header.html', {"page": "vjs"})
+
+  <main id="vj-page" data-animation-container="true">
+   
+    <section class="flex--column section--centered" style="justify-content: center;">
+      <div style="background: #000; padding: 2rem 1rem">
+        <h1>VJs</h1>
+        <p>Estes son los artists/vjs que han contribuido a los videos de selecion de convocatoria.</p>
+      </div>
+      <div class="photo-desc flex--column flex--row--at-md">
+        
+        <figure class="vj-photo"> 
+          <img src="https://d1ntozumzmh538.cloudfront.net/imagesEscape/dejotade_visuals.jpg" />
+        </figure>
+      
+        <p>
+          Juan Diego Díaz aka dejotade es diseñador gráfico de profesión y amante de la música electrónica. 
+          En el año 2017 comenzó a trabajar como diseñador en el club FUGA, donde un año después lo
+          impulsaron a entrar al mundo del vjing para poder hacer visuales en las fiestas, desde entonces siempre 
+          mantuvo el interés por unir lo visual con la música.
+        </p>
+      </div>
+      <div class="photo-desc flex--column flex--row--at-md section--centered">
+        
+        <figure class="vj-photo">
+          <img src="https://d1ntozumzmh538.cloudfront.net/imagesEscape/julia_stomal_visuals.jpg" />
+        </figure>
+        <p>
+          Julia Stomal es una artista audiovisual e ilustradora canadiense, basada en Lima, Perú.
+        </p>
+      </div>
+
+      <div class="photo-desc flex--column flex--row--at-md section--centered">
+      
+        <figure class="vj-photo">
+          <img src="https://d1ntozumzmh538.cloudfront.net/imagesEscape/dimensial_visuals.jpg" />
+        </figure>
+      
+        <p>
+          Luis Alberto Torres aka Dimensial. Nacido en Lima - Perú.
+          A lo largo del 2018 empezó a participar proyectando en algunos eventos de la ciudad y a fines de año fue contratado como VJ en el club de música electrónica Fuga.
+          Gracias a su formación musical, intenta crear una atmósfera visual coherente al beat, colorida y llena de texturas.
+          Con los años ha hecho uso de muchas herramientas
+          de mezcla y de diseño, tomando  como favoritas el Resolume Arena, Touchdesigner y After Effects entre otras.
+          Actualmente es miembro del equipo Lunario.  
+        </p>
+      </div>
+      <div class="photo-desc flex--column flex--row--at-md section--centered">
+      
+        <figure class="vj-photo">
+          <img src="https://d1ntozumzmh538.cloudfront.net/imagesEscape/neta_visuals.jpg" />
+        </figure>
+      
+        <p>
+          n3t4
+        </p>
+      </div>
+    </section>
+    
+  </main>
+
+  @@include('includes/footer.html')
+  <script src="js/vjs.js" type="module"></script>
+  <script>
+    if (document.body.clientWidth > 760) {
+      const script = document.createElement('script');
+      script.src = 'js/movingFields_escape.p5.js';
+      script.type = 'text/javascript';
+      document.body.appendChild(script)
+    };
+  </script>
+</body>
+
+</html>

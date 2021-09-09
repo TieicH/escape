@@ -4,6 +4,7 @@ import { lazyLoad,
   noOpacityClass,
   lazyLoadAttribute,
   lazySrc } from './lazyLoad.js';
+import './nav.js';
 
 let artistsTotal;
 let artistsData = [];
@@ -95,6 +96,3 @@ window.onload = () => {
   // }
 }
 
-document.querySelector("nav").addEventListener("click", (e) => {
-  document.querySelector("nav").classList.toggle("open");
-})

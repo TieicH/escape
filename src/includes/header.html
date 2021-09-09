@@ -6,11 +6,15 @@
     <nav>
       <div id="nav-mobile-icon">&#8546;</div>
       <ul id="nav-links">
-        <li><a href="convocatoria_01.html" 
-          @@if (page === 'collective') {
-            class="selected"
-          }>
-          Convocatoria 1</a></li>
+        <li>
+          <a href="convocatoria_01.html" 
+            @@if (page === 'collective') {
+              class="selected"
+            }>
+            Convocatoria 1
+          </a>
+        </li>
+        <li><a href="vjs.html" @@if (page === 'vjs') { class="selected"}>VJs</a></li>
         <!-- <li><a href="register.html">Juntar</a></li> -->
         <!-- <li><a href="about.html">About</a></li> -->
         <li><a href="past_events.html"

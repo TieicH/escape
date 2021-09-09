@@ -1,6 +1,7 @@
 import { getArtistsBasicInfo } from "./data.js";
 import { getImageUrl } from "./dj_fotos.js";
 import { lazyLoad, noOpacityClass, lazyLoadAttribute, lazySrc } from './lazyLoad.js';
+import './nav.js';
 
 const renderArtists = (artistsData) => {
   return new Promise(resolve => {
@@ -32,6 +33,3 @@ window.addEventListener('load', lazyLoad, false);
 window.addEventListener('scroll', lazyLoad, false);
 window.addEventListener('resize', lazyLoad, false);
 
-document.querySelector("nav").addEventListener("click", (e) => {
-  document.querySelector("nav").classList.toggle("open");
-})

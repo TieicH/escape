@@ -7,16 +7,21 @@ main#enter {
   flex: 2 1 100vh;
 
   a {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
 
   #animation-container {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     padding: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
   }
 
 
@@ -28,18 +33,18 @@ main#enter {
 }
 
 #enter-logo {
-  position: absolute;
-  top: 25%;
-  left: 0;
-  z-index: 2;
+  // position: absolute;
+  // top: 25%;
+  // left: 0;
+  // z-index: 2;
   max-width: 700px;
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   #enter-logo {
-    position: absolute;
-    top: 10%;
-    left: 25%;
+    // position: absolute;
+    // top: 10%;
+    // left: 25%;
   }
 }

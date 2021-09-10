@@ -1,18 +1,9 @@
-
-// #vj-page {
-//   flex-direction: column;
-// }
-
-// .vj-photo {
-//   width: 100%;
-
-//   img {
-//     width: 100%;
-//   }
-// }
-// .photo-desc {
-//   // flex: 2 1 10vh;
-// }
+#vj-page {
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
 
 .vj-photo {
   width: 100%;
@@ -26,7 +17,7 @@
 .photo-desc {
   padding: 1rem;
 
-  p {
+  .desc {
     padding: 1rem;
   }
 }
@@ -34,6 +25,16 @@
 #vj-header { 
   background: #000;
   padding: 2rem;
+}
+
+.insta {
+  background: rgba(0, 0, 0, 0.5);
+  margin: .3rem 0;
+  background: rgba(255, 255, 255, 0.2);
+  margin: .5rem 0;
+  font-size: 1rem;
+  padding: 2px 0;
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -54,7 +55,7 @@
     // figure {
     //   // flex-shrink: 1;
     // }
-    p {
+    .desc {
       width: 70%;
       background: #000;
       padding: 2rem;

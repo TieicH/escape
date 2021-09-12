@@ -30,17 +30,22 @@ a {
 }
 
 footer {
-  padding: 2rem;
+  padding: 1.5rem;
   border-top: 1px solid rgba( 255, 255, 255, .2);
   flex: 1;
-  min-height: 70px;
+  min-height: 50px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
+
   .social-icons {
     display: flex;
     align-items: center;
+  }
+
+  .byline {
+    font-size: .8rem;
   }
 }
 
@@ -77,7 +82,7 @@ nav {
     display: inline-block;
     padding: 1rem;
     text-decoration: none;
-
+    font-size: 1rem;
     &.selected, &:hover {
       text-decoration: underline;
     }
@@ -96,13 +101,13 @@ nav.open {
     border: 1px solid white;
     right: 0;
     background: rgba(0, 0, 0, .5);
-    width: 140px;
+    width: 150px;
   }
 }
 
 p {
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #logo {
@@ -153,8 +158,8 @@ p {
 }
 
 .insta-btn, .fb-btn, .yt-btn {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin: 0px 4px;
   display: block;
   background-image: url('../img/social-icons.png');
@@ -166,11 +171,11 @@ p {
 }
 
 .insta-btn {
-  background-position: -280px 0px;
+  background-position: -298px 0px;
 }
 
 .yt-btn {
-  background-position:-560px 0px;
+  background-position:-600px 0px;
   margin-left:0;
 }
 
@@ -190,6 +195,9 @@ p {
 
   nav {
     margin: 0 4rem;
+    a {
+      font-size: 1.2rem
+    }
   }
   
   nav.open {
@@ -211,6 +219,10 @@ p {
     }
   }
 
+  p {
+    font-size: 1.2rem;
+  }
+
   #nav-mobile-icon {
     display: none;
   }
@@ -222,6 +234,25 @@ p {
   footer {
     flex-direction: row;
     min-height: 40px;
+    padding: 2rem;
+  }
+
+  .insta-btn, .fb-btn, .yt-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .fb-btn {
+    background-position: 0px 0px;
+  }
+  
+  .insta-btn {
+    background-position: -280px 0px;
+  }
+  
+  .yt-btn {
+    background-position:-560px 0px;
+    margin-left:0;
   }
 
   .section--centered {

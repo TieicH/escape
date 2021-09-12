@@ -26,10 +26,7 @@ const envConfig = task('envConfig');
 task('processHtml', function() {
   console.log('processing html files');
   return src(['src/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
+    .pipe(fileinclude())
     .pipe(dest(DIST_DIR));
 });
 

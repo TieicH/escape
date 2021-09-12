@@ -9,10 +9,7 @@ const DIST_DIR = './dist';
 task('processHtml', function() {
   console.log('processing html files');
   return src(['src/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
+    .pipe(fileinclude())
     .pipe(dest('./dist'));
 });
 

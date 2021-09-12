@@ -1,10 +1,10 @@
-const key = "AIzaSyAJ-S12P0yrxM_jOYAH74HIMiST5JTbsMQ"
-const sid_orig="1RVReP21W0xfHf-Z82jO-flozDv2qAgpQj2OVwi-GyqE"
+import { api_key, sheet_id } from "./config.js";
+
 // const sid="19ttl2WeUfe8-fp05lLgl_Mk1kpBwbkVS4nTLu-hHJQE";
 const rowStart = 2;
 const colStart = "A";
 const colEnd = "F";
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${sid_orig}/values/Sheet1!`;
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheet_id}/values/Sheet1!`;
 const start = `${colStart}${rowStart}`;
 const end = `${colEnd}`;
 
@@ -24,7 +24,7 @@ export const artistObjectFromColumns = (columns) =>
   }, {});
 
 export const getArtists = () => {
-  return fetch(`${url}${start}:${end}?key=${key}`).then((resp) => {
+  return fetch(`${url}${start}:${end}?key=${api_key}`).then((resp) => {
     return resp.json();
   })
 }

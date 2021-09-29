@@ -51,6 +51,80 @@ main {
   display: flex;
 }
 
+
+#tab-bar {
+  // min-width: 768px;
+  // max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex: 2 1 5vh;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgba($color: #FFF, $alpha: .4);
+
+    &.selected, &:hover {
+      color: white;
+    }
+    &.selected {
+      &:before {
+        content: "> ";
+      }
+    }
+  }
+}
+
+#videos {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom:2rem;
+    text-align: center;
+  }
+
+  .video {
+    //margin: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+  
+    &:last-child {
+      margin-bottom: 4rem;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+
+  .fake-video {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    img {
+      width: 80%;
+    }
+  }
+  
+}
+
 @media screen and (min-width: 720px) {
   .artist-card {
     width: 200px;
@@ -59,6 +133,32 @@ main {
 
   .artist-info {
     font-size: 1.2rem;
+  }
+
+
+  .tabs {
+    min-width: 900px;
+  }
+
+    
+  #videos {
+    .video {
+      margin: 2rem 0;
+    }
+
+    .fake-video, .video iframe {
+      width:560px;
+      height:315px;
+    }
+
+    .fake-video {
+      display: block;
+      width: auto;
+
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 /* --- end collective page --- */

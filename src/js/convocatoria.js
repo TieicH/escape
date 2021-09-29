@@ -32,7 +32,18 @@ document.querySelector("#tab-bar").addEventListener("click", (e) => {
   if (e.target.tagName.toUpperCase() !== "A") {
     return;
   }
-  document.querySelectorAll(".tab-section").forEach(s => s.style.display = "none");
+
+  if (e.target.classList.contains("selected")) {
+    return;
+  }
+
+  document.querySelectorAll("#tab-bar a").forEach(s => {
+    s.classList.remove("selected")
+  });
+  e.target.classList.add("selected");
+  document.querySelectorAll(".tab-section").forEach(s => {
+    s.style.display = "none"
+  });
   document.getElementById(e.target.dataset.sectionId).style.display = "flex";
 })
 

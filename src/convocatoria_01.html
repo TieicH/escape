@@ -6,8 +6,19 @@
   </head>
   <body>
     @@include('includes/header.html', {"page": "collective"})
+    <div id="tab-bar">
+      <ul class="tabs">
+        <li><a href="#djs" class="selected" data-section-id="artists">DJs</a></li>
+        <li><a href="#videos" data-section-id="videos">Videos</a></li>
+      </ul>
+    </div>
+
+   
     <main>
-      <section id="artists" class="section--centered">
+      <section id="artists" class="tab-section section--centered">
+      </section>
+      <section id="videos" class="tab-section section--centered" style="display:none">
+        @@include('includes/videos.html')
       </section>
     </main>
     @@include('includes/footer.html')

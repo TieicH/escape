@@ -85,6 +85,7 @@ nav {
     font-size: 1rem;
     &.selected, &:hover {
       text-decoration: underline;
+      color: cyan;
     }
   }
 }
@@ -104,6 +105,8 @@ nav.open {
     width: 150px;
   }
 }
+
+
 
 p {
   line-height: 1.5;
@@ -126,7 +129,6 @@ p {
     width:100%;
     height: 100%;
   }
-  
 }
 
 .flex {
@@ -162,28 +164,28 @@ p {
   height: 30px;
   margin: 0px 4px;
   display: block;
-  background-image: url('../img/social-icons.png');
-  background-size: 300%;
+  background-image: url('../img/social_icons.png');
+  background-size: 500%;
 }
 
 .fb-btn {
-  background-position: 0px 0px;
+  background-position: -9px -10px;
 }
 
 .insta-btn {
-  background-position: -298px 0px;
+  background-position: -192px -10px;
 }
 
 .yt-btn {
-  background-position:-600px 0px;
-  margin-left:0;
+  background-position: -109px -10px;
 }
 
 @media screen and (min-width: 768px) {
   header {
     margin-bottom: 2rem;
   }
-  
+
+
   .flex--row--at-md {
     flex-direction: row !important;
   }
@@ -235,24 +237,6 @@ p {
     flex-direction: row;
     min-height: 40px;
     padding: 2rem;
-  }
-
-  .insta-btn, .fb-btn, .yt-btn {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .fb-btn {
-    background-position: 0px 0px;
-  }
-  
-  .insta-btn {
-    background-position: -280px 0px;
-  }
-  
-  .yt-btn {
-    background-position:-560px 0px;
-    margin-left:0;
   }
 
   .section--centered {

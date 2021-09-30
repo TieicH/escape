@@ -46,6 +46,7 @@ footer {
 
   .byline {
     font-size: .8rem;
+    margin: 1rem -.5rem;
   }
 }
 
@@ -239,6 +240,10 @@ p {
     padding: 2rem;
   }
 
+  .byline {
+    margin: 0;
+  }
+  
   .section--centered {
     max-width:1090px;
     min-width: 768px;

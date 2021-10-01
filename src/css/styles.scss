@@ -46,7 +46,7 @@ footer {
 
   .byline {
     font-size: .8rem;
-    margin: 1rem -.5rem;
+    margin: 1rem -1rem;
   }
 }
 
@@ -80,10 +80,10 @@ nav {
   position: relative;
 
   a {
-    display: inline-block;
+    display: block;
     padding: 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .8rem;
     &.selected, &:hover {
       text-decoration: underline;
       color: cyan;
@@ -199,7 +199,7 @@ p {
   nav {
     margin: 0 4rem;
     a {
-      font-size: 1.2rem
+      display: inline-block;
     }
   }
   

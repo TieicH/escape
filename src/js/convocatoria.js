@@ -7,7 +7,7 @@ const renderArtists = (artistsData) => {
   return new Promise(resolve => {
     const artistsHtml = artistsData.map(artist => {
       return `<div class="artist-card" data-row="${artist.row}">
-          <a href="detail?artist=${artist.row}">
+          <a href="detail.html?artist=${artist.row}">
             <div class="artist-info">
               <h3>${artist.artist_name}</h3>
               <div>[ ${artist.location} ] </div>

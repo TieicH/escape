@@ -1,0 +1,183 @@
+21 de julio : taller de visuales en TidalCycles Renzo Rospigliosi
+
+¿Sabías que es posible generar música a partir de la escritura de código? 
+Te invitamos a explorar lenguajes y herramientas para la creación musical por medio de algoritmos y software libre.            
+
+En esta sesión aprenderemos a usar TidalCycles, una herramienta gratuita y abierta para hacer música escribiendo código en vivo.
+Conocerás el Live Coding y su uso a nivel mundial para realizar espectáculos musicales a partir de la improvisación y la tecnología. 
+En este caso específico, se utilizará una versión web en que evita la necesidad de instalación. Además, es un entorno accesible que no requiere conocimientos previos en música ni en programación.
+
+
+Requisitos:
+Una computadora con conexión a internet.
+Google Chrome (de preferencia).
+
+Dirigido a:
+Artistas escénicos y audiovisuales interesados en incorporar la programación en su
+práctica artística, musicos, VJS, publico interesado en expandir sus posibilidades creativas desde el enfoque interdisciplinario
+
+
+Inscripciones abiertas: hasta el 15  de julio 2022 
+link  de inscripción: https://forms.gle/qnbBYUeUxWmkaZ4X9
+
+Fechas del taller: 21 de julio 2022
+
+Horario: 4:00 a 7:00 pm
+
+Cupo: 15 participantes seleccionados que seran notificados por email
+
+Taller gratuito online via plataforma Jitsi
+
+
+Tallerista: Renzo Rospigliosi
+
+Artista escénico intermedial. Licenciado en Teatro por la Pontificia Universidad Católica del Perú y actualmente cursando la Maestría en Artes Plásticas, Electrónicas y del Tiempo 
+en la Universidad de los Andes en Bogotá. Ha presentado su trabajo a nivel internacional en espacios como el Elfreth’s Alley Museum en Philadelphia, el Centro Cultural de la PUCP 
+en Lima y diversos festivales. Influenciado por la performance construye instalaciones, videoesculturas, piezas escénicas y sonoras utilizando lógicas computacionales y poniendo 
+en tensión la relación humano-máquina. Es director del colectivo de improvisación interdisciplinaria “Sensáfona”, con quienes explora la relación entre las artes escénicas, el movimiento 
+y la codificación en vivo.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10 de agosto:  Taller de visuales en Touchdesigner por Luciano Toledo (Tolch)
+
+
+El objetivo del grupo es equipar a los participantes con los conocimientos fundamentales para sumergirse en un entorno de programación visual, podrá crear su propio material artístico y proyectos interactivos multimedia.
+
+Obtendrá conocimiento del programa Touchdesigner a través de ejemplos prácticos, para desarrollar una práctica grupal de la técnica y poder incluirla en sus proyectos profesionales.
+
+Se compartirá pantalla con los participantes, para que puedan ver paso a paso cómo generar contenido visual desde cero.
+
+
+
+Dirigido a:
+Dirigido a artistas visuales, Grafistas 2D/3D, programadores músicos y toda persona interesada en 
+el programación visual y gráfica generativa en tiempo real y entornos interactivos.
+
+
+Requisitos:
+Una computadora 
+
+Touchdesigner instalado link aqui: https://derivative.ca/download Si no hay una licencia presente, se abrirá Key Manager Dialogo necesario para activar el programa.
+
+
+
+Inscripciones abiertas: hasta el  31  de julio 2022 
+link de inscripción: https://forms.gle/qnbBYUeUxWmkaZ4X9
+
+Fechas del taller: 10 de agosto 2022
+
+Horario: 5:00 a 7:00 pm
+
+Cupo: abierto a 30 personas que seran notificados por email
+
+Taller gratuito online via plataforma Jitsi
+
+
+
+Tallerista: 
+Luciano Toledo a.k.a Tolch 
+Artista audiovisual, nacido en Buenos Aires, en búsqueda constante de explorar nuevas posibilidades en el desarrollo de arte digital, atravesando áreas como la interactividad, machine learning y sistemas audiovisuales reactivos.
+Actualmente estoy creando material de aprendizaje para la comunidad latina de Touchdesigner, a través de tutoriales en http://qualia.social , donde explico varias técnicas y conocimientos paso a paso.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17 de agosto:  Taller de Procesing p5.js por Ivy Feraco (Unjust)
+
+p5.js es una librería que ayuda hacer animaciones con el <canvas> de manera interactiva. En el
+fondo, es javascript que corre en el navegador, y por eso puede también trabajar con otros APIs
+Web. Tiene plugins de sonido, data, y visualizaciones gráficas.
+
+En este taller, vamos a explorar p5.js para dibujar en el navegador y algunas técnicas para
+interactuar con el sonido.
+
+
+Requisitos:
+
+Entendimiento de conceptos básicos de programación (variables, condicionales,
+funciones), y la habilidad para escribirlo. 
+
+No tiene que ser necesariamente javascript ni tener un nivel avanzado. 
+
+Puedes revisar recursos tipo http://es.javascript.info, w3schools
+javascript, Mozilla para familiarizarte si es nuevo para ti.
+
+Una pc/laptop con coneccion a internet y el editor https://editor.p5js.org
+
+Midi controller (opcional)
+
+Dirigido a:
+Artistas escénicos y audiovisuales interesados en incorporar la programación en su
+práctica artística, musicos, VJS, publico interesado en expandir sus posibilidades creativas desde el enfoque interdisciplinario
+
+
+Inscripciones abiertas: hasta el 1  de agosto 2022
+link de inscripción: https://forms.gle/qnbBYUeUxWmkaZ4X9
+
+Fechas del taller: 17 de agosto 2022
+
+Horario: 5:00 a 7:00 pm
+
+Cupo: abierto a 15 personas que seran notificados por email
+
+Taller gratuito online via plataforma Jitsi
+
+
+
+Tallerista: Ivy Feraco es una programadora y artista de EEUU que se graduó en el programa de Arte y Tecnología en Parsons New School, y ahora vive en Lima. Ella escribe código en javascript usando bibliotecas como p5.js para crear animaciones interactivas y responsivas. 
+Actualemente ayuda en un bootcamp de tecnología web en Laboratoria.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23 de agosto Taller de producción musical y creación de live set en Ableton por  Rafael Frias (bHorus)
+
+
+Puede ser complicado entender a primera vista el funcionamiento de un daw de producción
+musical o componer canciones sin un conocimiento previo, pero con la suficiente
+información puedes conseguir resultados asombrosos.
+En el siguiente taller te explicamos cómo lograrlo con recursos fáciles de conseguir, como
+una laptop y un par de audífonos. Te enseñaremos a plasmar tus ideas en un software
+utilizado por muchos profesionales en la industria musical. También podrás aprender a
+armar un live set, integrando equipo de hardware con el programa Ableton para controlar
+todo desde una estación de trabajo.
+
+Requisitos: 
+Laptop o PC con el Software de Ableton.
+Audífonos o monitores para escuchar lo que producimos y una Interfaz de audio (opcional).
+
+
+Este taller está dirigido a personas interesadas en el audio y la producción musical, con o
+sin conocimientos previos en cuanto a teoría musical. También está dirigido a personas
+afanadas a los sintetizadores y el audio gear.
+
+
+Inscripciones abiertas: hasta el 10  de agosto 2022 
+link de inscripción : https://forms.gle/qnbBYUeUxWmkaZ4X9
+
+Fechas del taller: 23de agosto 2022
+
+Horario: 4:00 a 7:00 pm
+
+Cupo: 15 participantes seleccionados que seran notificados por email
+
+Taller gratuito online via plataforma Jitsi
+
+
+El tallerista: Rafael Frias(bHorus), dj y productor, que comenzó su carrera estudiando
+en la escuela de música de la Upc. Se enfocó en el diseño de sonido y la síntesis gracias a
+su interés por la música electrónica y la curiosidad de experimentar con equipos
+analógicos y digitales para la composición de música. Ahora es parte del estudio de
+producción musical y sello discográfico Low Key Entertainment, en el cual desarrolla sus
+conocimientos de la mano de artistas de distintos géneros musicales, quienes hacen
+producciones de nivel internacional que puedan competir en mercados extranjeros.
+Actualmente desarrolla su carrera artística bajo el nombre de bHorus, con el cual explora el
+Lo-Fi House y Breaks de manera orgánica, utilizando hardware vintage para llegar a un
+sonido más cálido.
+
+

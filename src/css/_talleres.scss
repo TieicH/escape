@@ -1,0 +1,88 @@
+#flyers {
+  flex-direction: column;
+  align-items:center;
+
+  a {
+    display: block;
+    width: 50%;
+    min-width: 600px;
+    margin: 2rem 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .mas-info {
+    padding: 5px;
+    line-height: 1.5;
+    border: rgba(89, 88, 88, 0.5) solid;
+    border-width: 0px 1px 1px 1px;
+  }
+}
+
+#taller-page {
+  margin: 2rem;
+  width: 80%;
+  align-self: center;
+  max-width: 1200px;
+
+  h1 {
+    align-self: center;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  dl {
+    font-size: 1rem;
+  }
+  dd, dt {
+    display: inline-block;
+    line-height:2;
+  }
+  dt {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom:1rem;
+  }
+  .main-image {
+    max-width:1000px;
+    width: 80%;
+    align-self:center;
+    margin-bottom: 2rem;
+  }
+
+  .margin-top {
+    margin-top:2rem;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  #taller-page {
+    .main-image {
+      width: 100%;
+      align-self:center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  #flyers {
+    flex-direction: column;
+    align-items:center;
+  
+    a {
+      display: block;
+      width: 90%;
+      min-width: auto;
+      margin: 2rem 0;
+    }
+  
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,26 +1,27 @@
 <header>
   <div id="header-contents">
-    <a href="convocatoria_02.html">
+    <a href="talleres.html">
       <img src="img/logo.png" id="logo" alt="Escape 010101 logo" />
     </a>
     <nav>
       <div id="nav-mobile-icon">&#8546;</div>
       <ul id="nav-links">
         <li>
+          <a href="talleres.html" 
+            @@if (page === 'talleres') {
+              class="selected"
+            }>
+            Talleres
+          </a>
+        </li>
+        <!-- <li>
           <a href="convocatoria_02.html" 
             @@if (page === 'nueva_convocatoria') {
               class="selected"
             }>
-            Nueva Convocatoria
+            Convocatoria 2
           </a>
-          <li>
-            <a href="talleres.html" 
-              @@if (page === 'talleres') {
-                class="selected"
-              }>
-              Talleres
-            </a>
-          </li>
+        </li> -->
         <!-- <li><a href="register.html">Juntar</a></li> -->
         <!-- <li><a href="about.html">About</a></li> -->
         <li>

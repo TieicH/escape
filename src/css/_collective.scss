@@ -92,7 +92,7 @@ main {
   position: relative;
   
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
     text-align: center;
@@ -104,7 +104,8 @@ main {
     flex-direction: column;
     position: relative;
     top: 20px;
-    width: 80%;
+    align-items: center;
+    width: 100%;
   
     &:last-child {
       margin-bottom: 4rem;
